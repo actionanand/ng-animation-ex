@@ -1,5 +1,16 @@
-/* .animation-buttons {
+.animation-buttons {
   display: flex;
   justify-content: space-between;
   width: 170px;
-} */
+}
+
+.my-square {
+  width: 100px;
+  height: 100px;
+}
+
+.animation-form {
+  display: flex;
+  justify-content: space-between;
+  width: 30rem;
+}

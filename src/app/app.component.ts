@@ -5,6 +5,7 @@ import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   animations: [
     divStateAnimation,
     wildStateAnimation(),
