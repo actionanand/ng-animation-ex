@@ -34,6 +34,128 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/animation/app.animation.ts":
+/*!********************************************!*\
+  !*** ./src/app/animation/app.animation.ts ***!
+  \********************************************/
+/*! exports provided: divStateAnimation, wildStateAnimation, list1Animation, list2Animation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "divStateAnimation", function() { return divStateAnimation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wildStateAnimation", function() { return wildStateAnimation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "list1Animation", function() { return list1Animation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "list2Animation", function() { return list2Animation; });
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+
+function divStateAnimation() {
+    return Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('divState', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            'background-color': 'red',
+            transform: 'translateX(0)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('highlighted', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            backgroundColor: 'green',
+            transform: 'translateX(100px)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('normal => highlighted', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(300)),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('highlighted => normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(700))
+    ]);
+}
+function wildStateAnimation() {
+    return Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('wildState', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            'background-color': 'red',
+            transform: 'translateX(0) scale(1)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('highlighted', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            backgroundColor: 'green',
+            transform: 'translateX(100px) scale(1)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('shrunken', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            backgroundColor: 'blue',
+            transform: 'translateX(0) scale(0.5)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('normal <=> highlighted', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(600)),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('shrunken <=> *', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                'background-color': 'orange'
+            }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(1000, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                borderRadius: '50px'
+            }))
+        ])
+    ]);
+}
+function list1Animation() {
+    return Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('list1', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            opacity: 1,
+            transform: 'translateX(0)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('void => *', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                opacity: 0,
+                transform: 'translateX(-100px)'
+            }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(300)
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* => void', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(300, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                transform: 'translateX(100px)',
+                opacity: 0
+            }))
+        ])
+    ]);
+}
+function list2Animation() {
+    return Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('list2', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+            opacity: 1,
+            transform: 'translateX(0)'
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('void => *', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(1000, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["keyframes"])([
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                    transform: 'translateX(-100px)',
+                    opacity: 0,
+                    offset: 0
+                }),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                    transform: 'translateX(-50px)',
+                    opacity: 0.5,
+                    offset: 0.3
+                }),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                    transform: 'translateX(-20px)',
+                    opacity: 1,
+                    offset: 0.8
+                }),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                    transform: 'translateX(0)',
+                    opacity: 1,
+                    offset: 1
+                })
+            ]))
+        ]),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* => void', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["group"])([
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(300, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                    color: 'red'
+                })),
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(800, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+                    transform: 'translateX(100px)',
+                    opacity: 0
+                }))
+            ])
+        ])
+    ]);
+}
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.ts":
 /*!**********************************!*\
   !*** ./src/app/app.component.ts ***!
@@ -45,7 +167,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _animation_app_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animation/app.animation */ "./src/app/animation/app.animation.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,8 +182,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.list = ['Milk', 'Sugar', 'Bread'];
-        this.state = 'normal';
-        this.wildState = 'normal';
+        this.state = 'normal'; // begining state of animation for 'divState'
+        this.wildState = 'normal'; // begining state of animation for 'wildState'
     }
     AppComponent.prototype.ngAfterViewInit = function () {
         // console.log(this.inputvalue.nativeElement.value);
@@ -96,101 +218,10 @@ var AppComponent = /** @class */ (function () {
             selector: 'app-root',
             template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
             animations: [
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('divState', [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                        'background-color': 'red',
-                        transform: 'translateX(0)'
-                    })),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('highlighted', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                        backgroundColor: 'green',
-                        transform: 'translateX(100px)'
-                    })),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('normal => highlighted', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(300)),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('highlighted => normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(700))
-                ]),
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('wildState', [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('normal', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                        'background-color': 'red',
-                        transform: 'translateX(0) scale(1)'
-                    })),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('highlighted', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                        backgroundColor: 'green',
-                        transform: 'translateX(100px) scale(1)'
-                    })),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('shrunken', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                        backgroundColor: 'blue',
-                        transform: 'translateX(0) scale(0.5)'
-                    })),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('normal <=> highlighted', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(600)),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('shrunken <=> *', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                            'background-color': 'orange'
-                        }),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(1000, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                            borderRadius: '50px'
-                        }))
-                    ])
-                ]),
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('list1', [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                        opacity: 1,
-                        transform: 'translateX(0)'
-                    })),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('void => *', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                            opacity: 0,
-                            transform: 'translateX(-100px)'
-                        }),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(300)
-                    ]),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('* => void', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(300, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                            transform: 'translateX(100px)',
-                            opacity: 0
-                        }))
-                    ])
-                ]),
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["trigger"])('list2', [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["state"])('in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                        opacity: 1,
-                        transform: 'translateX(0)'
-                    })),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('void => *', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(1000, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["keyframes"])([
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                                transform: 'translateX(-100px)',
-                                opacity: 0,
-                                offset: 0
-                            }),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                                transform: 'translateX(-50px)',
-                                opacity: 0.5,
-                                offset: 0.3
-                            }),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                                transform: 'translateX(-20px)',
-                                opacity: 1,
-                                offset: 0.8
-                            }),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                                transform: 'translateX(0)',
-                                opacity: 1,
-                                offset: 1
-                            })
-                        ]))
-                    ]),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["transition"])('* => void', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["group"])([
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(300, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                                color: 'red'
-                            })),
-                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["animate"])(800, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_1__["style"])({
-                                transform: 'translateX(100px)',
-                                opacity: 0
-                            }))
-                        ])
-                    ])
-                ])
+                Object(_animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["divStateAnimation"])(),
+                Object(_animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["wildStateAnimation"])(),
+                Object(_animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["list1Animation"])(),
+                Object(_animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["list2Animation"])()
             ]
         })
     ], AppComponent);
