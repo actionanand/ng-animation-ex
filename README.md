@@ -23,6 +23,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 - [How to deploy a React, Angular and Vue project to Github pages](https://deepinder.me/how-to-deploy-a-react-angular-vue-project-to-github-pages)
 
+- [Angular animations - Coursera's video](https://www.coursera.org/lecture/angular/exercise-video-angular-animations-part-1-C7YwL)
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
