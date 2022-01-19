@@ -104,14 +104,16 @@ import { trigger , state , style, transition, animate, keyframes, group } from '
 })
 
 export class AppComponent implements AfterViewInit{
-  ngAfterViewInit(): void {
-    console.log(this.inputvalue.nativeElement.value);
-  }
+
   @ViewChild('input', { static: false }) inputvalue: ElementRef;
 
   list = ['Milk', 'Sugar', 'Bread'];
   state = 'normal';
   wildState = 'normal';
+
+  ngAfterViewInit(): void {
+    // console.log(this.inputvalue.nativeElement.value);
+  }
 
     onAdd(item: string) {
       this.list.unshift(item);
@@ -130,5 +132,13 @@ export class AppComponent implements AfterViewInit{
 
     onShrink() {
       this.wildState = 'shrunken';
+    }
+
+    animationStarted(event) {
+      console.log(event);
+    }
+
+    animationFinished(event) {
+      console.log(event);
     }
 }

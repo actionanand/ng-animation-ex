@@ -7,7 +7,9 @@
         <button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
       </div>
       <hr>
-      <div [@divState]="state" style="width: 100px; height: 100px;"></div>
+      <div [@divState]="state" style="width: 100px; height: 100px;"
+      (@divState.start)="animationStarted($event)"
+      (@divState.done)="animationFinished($event)"></div>
       <br>
       <div [@wildState]="wildState" style="width: 100px; height: 100px;"></div>
     </div>
