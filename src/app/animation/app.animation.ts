@@ -1,7 +1,10 @@
 import { trigger , state , style, transition, animate, keyframes, group } from '@angular/animations';
 
-export function divStateAnimation() {
-  return trigger('divState', [
+// export the various triggers as constants or functions :)
+
+export const divStateAnimation =
+  // trigger name for attaching this animation to an element using the [@triggerName] syntax
+  trigger('divState', [
     state('normal', style({
       'background-color': 'red',
       transform: 'translateX(0)'
@@ -13,7 +16,7 @@ export function divStateAnimation() {
     transition('normal => highlighted', animate(300)),
     transition('highlighted => normal', animate(700))
   ]);
-}
+
 
 export function wildStateAnimation() {
   return trigger('wildState', [
@@ -103,6 +106,32 @@ export function list2Animation() {
           opacity: 0
         }))
       ])
+    ])
+  ]);
+}
+
+export function flyInOut() {
+  // trigger name for attaching this animation to an element using the [@triggerName] syntax
+  return trigger('flyInOut', [
+    state('*', style({
+      opacity: 1,
+      transform: 'translateX(0)'
+    })),
+    // route 'enter' transition
+    transition(':enter', [
+      // css styles at start of transition
+      style({
+        transform: 'translateX(-100%)',
+        opacity: 0
+      }),
+      animate('500ms ease-in')
+    ]),
+    transition(':leave', [
+      // animation and styles at end of transition
+      animate('500ms ease-in', style({
+        transform: 'translateX(100%)',
+        opacity: 0
+      }))
     ])
   ]);
 }

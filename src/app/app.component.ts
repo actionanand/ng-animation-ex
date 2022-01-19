@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
-import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation } from './animation/app.animation';
+import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, flyInOut } from './animation/app.animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   animations: [
-    divStateAnimation(),
+    divStateAnimation,
     wildStateAnimation(),
     list1Animation(),
     list2Animation()
