@@ -38,8 +38,10 @@ export function wildStateAnimation() {
         'background-color': 'orange'
       }),
       animate(1000, style({
-        borderRadius: '50px'
-      }))
+        borderRadius: '50px',
+        'background-color': 'green'
+      })),
+      animate(1000)
     ])  
   ]);
 }
