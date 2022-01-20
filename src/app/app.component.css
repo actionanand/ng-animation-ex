@@ -20,6 +20,10 @@
   font-weight: bold;
 }
 
+.card-number-grp {
+  display: flex;
+}
+
 .card-number {
   width: 100px;
   height: 100px;

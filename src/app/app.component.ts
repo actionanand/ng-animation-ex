@@ -40,6 +40,7 @@ export class AppComponent implements AfterViewInit{
   routerAnimation = 'FlyInAnimations';
   counter = 0;
   numList: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  listToShow = [];
   arrayCounter = 0;
 
   orientation: Orientation;
@@ -48,6 +49,7 @@ export class AppComponent implements AfterViewInit{
 
   constructor() {
     this.orientation = 'next';
+    this.listToShow = this.numList.slice(0, 3);
   }
 
   get stateName() {
@@ -120,15 +122,17 @@ export class AppComponent implements AfterViewInit{
 
     previousItem() {
       if (this.arrayCounter > 0) {
-        this.arrayCounter--;
         this.orientation = 'prev';
+        this.listToShow = this.numList.slice(this.arrayCounter, this.arrayCounter - 3);
+        this.arrayCounter = this.arrayCounter -3;
       }
     }
 
     nextItem() {
       if (this.arrayCounter != this.numList.length - 1) {
-        this.arrayCounter++;
         this.orientation = 'next';
+        this.listToShow = this.numList.slice(this.arrayCounter, this.arrayCounter + 3);
+        this.arrayCounter = this.arrayCounter + 3;
       }
     }
 }
