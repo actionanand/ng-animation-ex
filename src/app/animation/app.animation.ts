@@ -142,7 +142,7 @@ export function flyInOut() {
   // Third we add a config object with optional set to true, this is to signal
   // angular that the animation may not apply as it may or may not be in the DOM.
 
-  export const fader =
+export const fader =
   trigger('myFlyInRouteAnimations', [
     transition('* <=> *', [
       // Set a default  style for enter and leave
@@ -160,7 +160,7 @@ export function flyInOut() {
         animate('600ms ease', style({ opacity: 1, transform: 'scale(1) translateY(0)' })),
       ], { optional: true })
     ]),
-]);
+  ]);
 
 
 export const slider =
@@ -235,7 +235,7 @@ export const slider =
     ];
   }
 
-  export const stepper =
+export const stepper =
   trigger('myStepperRouteAnimations', [
     transition('* <=> *', [
       query(':enter, :leave', [
@@ -262,7 +262,7 @@ export const slider =
         ], { optional: true })
       ]),
     ])
-]);
+  ]);
 
 export const popOverAnimation =
 trigger('popOverAni', [

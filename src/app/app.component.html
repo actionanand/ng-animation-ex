@@ -3,7 +3,7 @@
 <!-- this is for same router animation -->
 <!-- <main [@myFlyInRouteAnimations]="myOutlet.isActivated ? myOutlet.activatedRoute : ''" >
   <router-outlet #myOutlet="outlet"></router-outlet>
-</main> -->
+</main>  -->
 
 <main [@myFlyInRouteAnimations]="prepareRoute(myOutlet)" *ngIf="routerAnimation === 'FlyInAnimations'">
   <router-outlet #myOutlet="outlet"></router-outlet>
@@ -28,13 +28,13 @@
       <div class="animation-buttons">
         <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
         <button class="btn btn-warning" (click)="onShrink()">Shrink!</button>
-        <button (click)="toggle()" class="btn btn-outline-info">Show Hint</button>
+        <button (click)="toggle()" class="btn btn-info">Show Hint</button>
         <button class="btn btn-primary" (click)="onRouterAnimationChange()">{{ routerAnimation }}</button>
       </div>
       <hr>
       <div [@popOverAni]="stateName">
-        <p><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/PNG_transparency_demonstration_2.png" alt="ludo-dice" width="100px"></p>
-        <p>Hello! click {{ routerAnimation }} to see animation.</p>
+        <p><img src="https://www.maxpixel.net/static/photo/1x/Rose-Red-Rose-Red-Flower-266785.jpg" alt="ludo-dice" width="100px"></p>
+        <p>Hello! click <span class="popover-span">{{ routerAnimation }}</span> to see animation.</p>
       </div>
       <hr>
       <div [@divState]="state" class="my-square"

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation,flyInOut, fader, slider, 
+import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, fader, slider, 
   transformer, stepper, popOverAnimation } from './animation/app.animation';
 
 @Component({
@@ -18,7 +18,6 @@ import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation,f
     wildStateAnimation(),
     list1Animation(),
     list2Animation(),
-    flyInOut,
     fader,
     slider,
     transformer,
