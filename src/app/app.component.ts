@@ -2,7 +2,9 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, fader, slider, 
-  transformer, stepper, popOverAnimation } from './animation/app.animation';
+  transformer, stepper, popOverAnimation, arraySlideInOut, arrayRotate } from './animation/app.animation';
+
+type Orientation = 'prev' | 'next';
 
 @Component({
   selector: 'app-root',
@@ -22,9 +24,12 @@ import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, 
     slider,
     transformer,
     stepper,
-    popOverAnimation
+    popOverAnimation,
+    arraySlideInOut,
+    arrayRotate
   ]
 })
+
 
 export class AppComponent implements AfterViewInit{
 
@@ -35,8 +40,20 @@ export class AppComponent implements AfterViewInit{
   wildState = 'normal'; // begining state of animation for 'wildState'
   routerAnimation = 'FlyInAnimations';
   counter = 0;
+  numList: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  listToShow = [];
+  arrayCounter = 0;
+  isArrayAniNormal = true;
+
+  orientation: Orientation;
 
   show = false;
+
+  constructor() {
+    this.orientation = 'next';
+    this.listToShow = this.numList.slice(0, 3);
+    this.arrayCounter += 3;
+  }
 
   get stateName() {
     return this.show ? 'show' : 'hide';
@@ -104,5 +121,19 @@ export class AppComponent implements AfterViewInit{
           this.routerAnimation = 'FlyInAnimations';
           break;
       }
+    }
+
+    previousItem() {
+      this.orientation = 'prev';
+      this.listToShow = [];
+      this.arrayCounter -= 3;
+      this.listToShow = this.numList.slice(this.arrayCounter - 3, this.arrayCounter);
+    }
+
+    nextItem() {
+      this.orientation = 'next';
+      this.listToShow = [];
+      this.listToShow = this.numList.slice(this.arrayCounter, this.arrayCounter + 3);
+      this.arrayCounter += 3;
     }
 }

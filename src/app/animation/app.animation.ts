@@ -38,8 +38,10 @@ export function wildStateAnimation() {
         'background-color': 'orange'
       }),
       animate(1000, style({
-        borderRadius: '50px'
-      }))
+        borderRadius: '50px',
+        'background-color': 'green'
+      })),
+      animate(1000)
     ])  
   ]);
 }
@@ -275,3 +277,33 @@ trigger('popOverAni', [
   transition('show => hide', animate('600ms ease-out')),
   transition('hide => show', animate('1000ms ease-in'))
 ]);
+
+export const arraySlideInOut =
+  trigger('arraySlideInOut', [
+    state('next', style({
+      transform: 'translateX(0)'
+    })),
+    transition('void <=> next', [
+      style({ transform: 'translateX(-300%)' }),
+      animate('1s ease-in', style({ transform: 'translateX(0%)' })),
+    ]),
+    transition('void <=> prev', [
+      style({ transform: 'translateX(0%)' }),
+      animate('1s ease-out', style({ transform: 'translateX(-300%)' })),
+    ])
+  ]);
+
+export const arrayRotate =
+  trigger('rotateAni', [
+    state('next', style({
+      transform: 'rotate(0deg)'
+    })),
+    transition('void <=> next', [
+      style({ opacity: 0, transform: 'rotate(360deg) scale(1.2)' }),
+      animate('1.2s ease-out', style({ transform: 'rotate(0deg) scale(1)', opacity:1 })),
+    ]),
+    transition('void <=> prev', [
+      style({opacity:0, transform: 'rotate(-360deg) scale(1.2)' }),
+      animate('1.2s ease-out', style({ transform: 'rotate(0deg) scale(1)' , opacity:1})),
+    ])
+  ]);
