@@ -75,3 +75,19 @@
       </ul>
     </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div>
+      <button (click)="previousItem()" [disabled]="arrayCounter===0" class="btn btn-primary">Prev</button>
+      <button (click)="nextItem()"  [disabled]="this.arrayCounter == this.numList.length - 1" class="btn btn-primary">Next</button>
+    </div>
+    <br>
+    <div>
+      <div class="col-xs-12" *ngFor="let number of numList; index as i;">
+        <div *ngIf="i === arrayCounter" class="card-number" [@arraySlideInOut]="orientation">
+          Hello {{ number }} !
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
