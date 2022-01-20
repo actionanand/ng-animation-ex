@@ -299,11 +299,11 @@ export const arrayRotate =
       transform: 'rotate(0deg)'
     })),
     transition('void <=> next', [
-      style({ opacity: 0, transform: 'rotate(360deg) scale(1)' }),
-      animate('1s ease-out', style({ transform: 'rotate(0deg)', opacity:1 })),
+      style({ opacity: 0, transform: 'rotate(360deg) scale(1.2)' }),
+      animate('1.2s ease-out', style({ transform: 'rotate(0deg) scale(1)', opacity:1 })),
     ]),
     transition('void <=> prev', [
-      style({opacity:0, transform: 'rotate(-360deg) scale(1)' }),
-      animate('1s ease-out', style({ transform: 'rotate(0deg)' , opacity:1})),
+      style({opacity:0, transform: 'rotate(-360deg) scale(1.2)' }),
+      animate('1.2s ease-out', style({ transform: 'rotate(0deg) scale(1)' , opacity:1})),
     ])
   ]);
