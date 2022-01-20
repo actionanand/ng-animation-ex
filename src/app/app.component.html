@@ -77,17 +77,26 @@
 </div>
 <div class="container">
   <div class="row">
-    <div>
-      <button (click)="previousItem()" [disabled]="arrayCounter===0" class="btn btn-primary">Prev</button>
-      <button (click)="nextItem()"  [disabled]="this.arrayCounter == this.numList.length - 1" class="btn btn-primary">Next</button>
+    <div class="animation-buttons">
+      <button (click)="previousItem()" [disabled]="arrayCounter <= 3" class="btn btn-primary">Prev</button>
+      <button (click)="nextItem()"  [disabled]="this.arrayCounter >= this.numList.length" class="btn btn-primary">Next</button>
+      <button (click)="isArrayAniNormal=!isArrayAniNormal" class="btn btn-success">Change Animation</button>
     </div>
     <br>
-    <div [@arraySlideInOut]="orientation" class="card-number-grp">
-      <div class="col-xs-12" *ngFor="let list of listToShow; index as i;">
+    <div class="card-number-grp" *ngIf="isArrayAniNormal">
+      <div class="col-xs-12" *ngFor="let list of listToShow; index as i;" [@arraySlideInOut]="orientation">
         <div class="card-number">
-          Hello {{ number }} !
+          Hello {{ list }} !
+        </div>
+      </div>
+    </div>
+    <div class="card-number-grp" *ngIf="!isArrayAniNormal">
+      <div class="col-xs-12" *ngFor="let list of listToShow; index as i;" [@rotateAni]="orientation">
+        <div class="card-number">
+          Hello {{ list }} !
         </div>
       </div>
     </div>
   </div>
 </div>
+<br>

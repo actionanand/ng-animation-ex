@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, fader, slider, 
-  transformer, stepper, popOverAnimation, arraySlideInOut } from './animation/app.animation';
+  transformer, stepper, popOverAnimation, arraySlideInOut, arrayRotate } from './animation/app.animation';
 
 type Orientation = 'prev' | 'next';
 
@@ -25,7 +25,8 @@ type Orientation = 'prev' | 'next';
     transformer,
     stepper,
     popOverAnimation,
-    arraySlideInOut
+    arraySlideInOut,
+    arrayRotate
   ]
 })
 
@@ -39,9 +40,10 @@ export class AppComponent implements AfterViewInit{
   wildState = 'normal'; // begining state of animation for 'wildState'
   routerAnimation = 'FlyInAnimations';
   counter = 0;
-  numList: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  numList: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   listToShow = [];
   arrayCounter = 0;
+  isArrayAniNormal = true;
 
   orientation: Orientation;
 
@@ -50,6 +52,7 @@ export class AppComponent implements AfterViewInit{
   constructor() {
     this.orientation = 'next';
     this.listToShow = this.numList.slice(0, 3);
+    this.arrayCounter += 3;
   }
 
   get stateName() {
@@ -121,18 +124,16 @@ export class AppComponent implements AfterViewInit{
     }
 
     previousItem() {
-      if (this.arrayCounter > 0) {
-        this.orientation = 'prev';
-        this.listToShow = this.numList.slice(this.arrayCounter, this.arrayCounter - 3);
-        this.arrayCounter = this.arrayCounter -3;
-      }
+      this.orientation = 'prev';
+      this.listToShow = [];
+      this.arrayCounter -= 3;
+      this.listToShow = this.numList.slice(this.arrayCounter - 3, this.arrayCounter);
     }
 
     nextItem() {
-      if (this.arrayCounter != this.numList.length - 1) {
-        this.orientation = 'next';
-        this.listToShow = this.numList.slice(this.arrayCounter, this.arrayCounter + 3);
-        this.arrayCounter = this.arrayCounter + 3;
-      }
+      this.orientation = 'next';
+      this.listToShow = [];
+      this.listToShow = this.numList.slice(this.arrayCounter, this.arrayCounter + 3);
+      this.arrayCounter += 3;
     }
 }
