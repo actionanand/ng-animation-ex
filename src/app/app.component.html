@@ -1,11 +1,40 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+<!-- this is for same router animation -->
+<!-- <main [@myFlyInRouteAnimations]="myOutlet.isActivated ? myOutlet.activatedRoute : ''" >
+  <router-outlet #myOutlet="outlet"></router-outlet>
+</main>  -->
+
+<main [@myFlyInRouteAnimations]="prepareRoute(myOutlet)" *ngIf="routerAnimation === 'FlyInAnimations'">
+  <router-outlet #myOutlet="outlet"></router-outlet>
+</main>
+
+<main [@mySliderRouteAnimations]="prepareRoute(myOutlet)" *ngIf="routerAnimation === 'SliderAnimations'">
+  <router-outlet #myOutlet="outlet"></router-outlet>
+</main>
+
+<main [@myTransformRouteAnimations]="prepareRoute(myOutlet)" *ngIf="routerAnimation === 'TransformAnimations'">
+  <router-outlet #myOutlet="outlet"></router-outlet>
+</main>
+
+<main [@myStepperRouteAnimations]="prepareRoute(myOutlet)" *ngIf="routerAnimation === 'StepperAnimations'">
+  <router-outlet #myOutlet="outlet"></router-outlet>
+</main>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <h1>Animations</h1>
       <div class="animation-buttons">
         <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
-        <button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
+        <button class="btn btn-warning" (click)="onShrink()">Shrink!</button>
+        <button (click)="toggle()" class="btn btn-info">Show Hint</button>
+        <button class="btn btn-primary" (click)="onRouterAnimationChange()">{{ routerAnimation }}</button>
+      </div>
+      <hr>
+      <div [@popOverAni]="stateName">
+        <p><img src="https://www.maxpixel.net/static/photo/1x/Rose-Red-Rose-Red-Flower-266785.jpg" alt="ludo-dice" width="100px"></p>
+        <p>Hello! click <span class="popover-span">{{ routerAnimation }}</span> to see animation.</p>
       </div>
       <hr>
       <div [@divState]="state" class="my-square"

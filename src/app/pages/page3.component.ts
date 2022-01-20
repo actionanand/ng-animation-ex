@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
   selector: 'app-page3',
   template: `
   <div class="page-container">
-    <h3>See you all! This is Page 3</h3>
+    <h3>See you all! I'm in the right side. This is Page 3</h3>
     <button class="btn btn-success" routerLink="/page-1">Page 1</button>
   </div>`,
   styles: [`

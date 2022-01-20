@@ -8,8 +8,8 @@ import { Page3 } from './pages/page3.component';
 const routes: Routes = [
   { path: '', redirectTo: 'page-1', pathMatch: 'full' },
   { path: 'page-1', component: Page1 },
-  { path: 'page-2', component: Page2 },
-  { path: 'page-3', component: Page3 }
+  { path: 'page-2', component: Page2, data: { animation: 'isRight' }  },
+  { path: 'page-3', component: Page3, data: { animation: 'isLeft' } }
 ];
 
 @NgModule({
