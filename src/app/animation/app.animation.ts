@@ -1,4 +1,4 @@
-import { trigger , state , style, transition, animate, keyframes, group } from '@angular/animations';
+import { trigger , state , style, transition, animate, keyframes, group, query } from '@angular/animations';
 
 // export the various triggers as constants or functions :)
 
@@ -135,3 +135,29 @@ export function flyInOut() {
     ])
   ]);
 }
+
+  // The query function has three params.
+  // First is the event, so this will apply on entering or when the element is added to the DOM.
+  // Second is a list of styles or animations to apply.
+  // Third we add a config object with optional set to true, this is to signal
+  // angular that the animation may not apply as it may or may not be in the DOM.
+
+  export const commonFader =
+  trigger('myFlyInRouteAnimations', [
+    transition('* <=> *', [
+      // Set a default  style for enter and leave
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          left: 0,
+          width: '100%',
+          opacity: 0,
+          transform: 'scale(0) translateY(100%)',
+        }),
+      ]),
+      // Animate the new page in
+      query(':enter', [
+        animate('600ms ease', style({ opacity: 1, transform: 'scale(1) translateY(0)' })),
+      ])
+    ]),
+]);

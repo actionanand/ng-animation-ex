@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
-import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, flyInOut } from './animation/app.animation';
+import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, commonFader } from './animation/app.animation';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, 
     divStateAnimation,
     wildStateAnimation(),
     list1Animation(),
-    list2Animation()
+    list2Animation(),
+    commonFader
   ]
 })
 
@@ -51,5 +53,9 @@ export class AppComponent implements AfterViewInit{
 
     animationFinished(event) {
       console.log(event);
+    }
+
+    prepareRoute(outlet: RouterOutlet) {
+      return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
     }
 }
