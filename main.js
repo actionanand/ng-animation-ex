@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <router-outlet></router-outlet> -->\n\n<!-- this is for same router animation -->\n<!-- <main [@myFlyInRouteAnimations]=\"myOutlet.isActivated ? myOutlet.activatedRoute : ''\" >\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main> -->\n\n<main [@myFlyInRouteAnimations]=\"prepareRoute(myOutlet)\" *ngIf=\"routerAnimation === 'FlyInAnimations'\">\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>\n\n<main [@mySliderRouteAnimations]=\"prepareRoute(myOutlet)\" *ngIf=\"routerAnimation === 'SliderAnimations'\">\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>\n\n<main [@myTransformRouteAnimations]=\"prepareRoute(myOutlet)\" *ngIf=\"routerAnimation === 'TransformAnimations'\">\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>\n\n<main [@myStepperRouteAnimations]=\"prepareRoute(myOutlet)\" *ngIf=\"routerAnimation === 'StepperAnimations'\">\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <h1>Animations</h1>\n      <div class=\"animation-buttons\">\n        <button class=\"btn btn-primary\" (click)=\"onAnimate()\">Animate!</button>\n        <button class=\"btn btn-warning\" (click)=\"onShrink()\">Shrink!</button>\n        <button class=\"btn btn-primary\" (click)=\"onRouterAnimationChange()\">{{ routerAnimation }}</button>\n      </div>\n      <hr>\n      <div [@divState]=\"state\" class=\"my-square\"\n      (@divState.start)=\"animationStarted($event)\"\n      (@divState.done)=\"animationFinished($event)\"></div>\n      <br>\n      <div [@wildState]=\"wildState\" class=\"my-square\"></div>\n    </div>\n  </div>\n  <hr>\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <div class=\"animation-form\">\n        <input type=\"text\" #input (keyup.enter)=\"onAdd(input.value)\" placeholder=\"Press 'enter' to add item\">\n        <button class=\"btn btn-primary\" (click)=\"onAdd(input.value)\">Add Item!</button>\n      </div>\n      <hr>\n      <ul class=\"list-group\">\n        <li [@list1]\n          class=\"list-group-item\"\n          (click)=\"onDelete(item)\"\n          *ngFor=\"let item of list\">\n          {{ item }}\n        </li>\n      </ul>\n    </div>\n  </div>\n  <hr>\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <ul class=\"list-group\">\n        <li [@list2]\n          class=\"list-group-item\"\n          (click)=\"onDelete(item)\"\n          *ngFor=\"let item of list\">\n          {{ item }}\n        </li>\n      </ul>\n    </div>\n</div>\n"
+module.exports = "<!-- <router-outlet></router-outlet> -->\n\n<!-- this is for same router animation -->\n<!-- <main [@myFlyInRouteAnimations]=\"myOutlet.isActivated ? myOutlet.activatedRoute : ''\" >\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>  -->\n\n<main [@myFlyInRouteAnimations]=\"prepareRoute(myOutlet)\" *ngIf=\"routerAnimation === 'FlyInAnimations'\">\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>\n\n<main [@mySliderRouteAnimations]=\"prepareRoute(myOutlet)\" *ngIf=\"routerAnimation === 'SliderAnimations'\">\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>\n\n<main [@myTransformRouteAnimations]=\"prepareRoute(myOutlet)\" *ngIf=\"routerAnimation === 'TransformAnimations'\">\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>\n\n<main [@myStepperRouteAnimations]=\"prepareRoute(myOutlet)\" *ngIf=\"routerAnimation === 'StepperAnimations'\">\n  <router-outlet #myOutlet=\"outlet\"></router-outlet>\n</main>\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <h1>Animations</h1>\n      <div class=\"animation-buttons\">\n        <button class=\"btn btn-primary\" (click)=\"onAnimate()\">Animate!</button>\n        <button class=\"btn btn-warning\" (click)=\"onShrink()\">Shrink!</button>\n        <button (click)=\"toggle()\" class=\"btn btn-info\">Show Hint</button>\n        <button class=\"btn btn-primary\" (click)=\"onRouterAnimationChange()\">{{ routerAnimation }}</button>\n      </div>\n      <hr>\n      <div [@popOverAni]=\"stateName\">\n        <p><img src=\"https://www.maxpixel.net/static/photo/1x/Rose-Red-Rose-Red-Flower-266785.jpg\" alt=\"ludo-dice\" width=\"100px\"></p>\n        <p>Hello! click <span class=\"popover-span\">{{ routerAnimation }}</span> to see animation.</p>\n      </div>\n      <hr>\n      <div [@divState]=\"state\" class=\"my-square\"\n      (@divState.start)=\"animationStarted($event)\"\n      (@divState.done)=\"animationFinished($event)\"></div>\n      <br>\n      <div [@wildState]=\"wildState\" class=\"my-square\"></div>\n    </div>\n  </div>\n  <hr>\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <div class=\"animation-form\">\n        <input type=\"text\" #input (keyup.enter)=\"onAdd(input.value)\" placeholder=\"Press 'enter' to add item\">\n        <button class=\"btn btn-primary\" (click)=\"onAdd(input.value)\">Add Item!</button>\n      </div>\n      <hr>\n      <ul class=\"list-group\">\n        <li [@list1]\n          class=\"list-group-item\"\n          (click)=\"onDelete(item)\"\n          *ngFor=\"let item of list\">\n          {{ item }}\n        </li>\n      </ul>\n    </div>\n  </div>\n  <hr>\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <ul class=\"list-group\">\n        <li [@list2]\n          class=\"list-group-item\"\n          (click)=\"onDelete(item)\"\n          *ngFor=\"let item of list\">\n          {{ item }}\n        </li>\n      </ul>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -38,7 +38,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*!********************************************!*\
   !*** ./src/app/animation/app.animation.ts ***!
   \********************************************/
-/*! exports provided: divStateAnimation, wildStateAnimation, list1Animation, list2Animation, flyInOut, fader, slider, transformer, stepper */
+/*! exports provided: divStateAnimation, wildStateAnimation, list1Animation, list2Animation, flyInOut, fader, slider, transformer, stepper, popOverAnimation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52,6 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slider", function() { return slider; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transformer", function() { return transformer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stepper", function() { return stepper; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "popOverAnimation", function() { return popOverAnimation; });
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 
 // export the various triggers as constants or functions :)
@@ -296,6 +297,16 @@ var stepper = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"]
         ]),
     ])
 ]);
+var popOverAnimation = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('popOverAni', [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('show', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+        opacity: 1
+    })),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["state"])('hide', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+        opacity: 0
+    })),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('show => hide', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('600ms ease-out')),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('hide => show', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('1000ms ease-in'))
+]);
 
 
 /***/ }),
@@ -355,7 +366,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".animation-buttons {\n  display: flex;\n  justify-content: space-between;\n  width: 320px;\n}\n\n.my-square {\n  width: 100px;\n  height: 100px;\n}\n\n.animation-form {\n  display: flex;\n  justify-content: space-between;\n  width: 30rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFlBQVk7RUFDWixhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLFlBQVk7QUFDZCIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFuaW1hdGlvbi1idXR0b25zIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICB3aWR0aDogMzIwcHg7XG59XG5cbi5teS1zcXVhcmUge1xuICB3aWR0aDogMTAwcHg7XG4gIGhlaWdodDogMTAwcHg7XG59XG5cbi5hbmltYXRpb24tZm9ybSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgd2lkdGg6IDMwcmVtO1xufSJdfQ== */"
+module.exports = ".animation-buttons {\n  display: flex;\n  justify-content: space-between;\n  width: 400px;\n}\n\n.my-square {\n  width: 100px;\n  height: 100px;\n}\n\n.animation-form {\n  display: flex;\n  justify-content: space-between;\n  width: 30rem;\n}\n\n.popover-span {\n  color: green;\n  font-weight: bold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFlBQVk7RUFDWixhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsOEJBQThCO0VBQzlCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLFlBQVk7RUFDWixpQkFBaUI7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hbmltYXRpb24tYnV0dG9ucyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgd2lkdGg6IDQwMHB4O1xufVxuXG4ubXktc3F1YXJlIHtcbiAgd2lkdGg6IDEwMHB4O1xuICBoZWlnaHQ6IDEwMHB4O1xufVxuXG4uYW5pbWF0aW9uLWZvcm0ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIHdpZHRoOiAzMHJlbTtcbn1cblxuLnBvcG92ZXItc3BhbiB7XG4gIGNvbG9yOiBncmVlbjtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59Il19 */"
 
 /***/ }),
 
@@ -389,7 +400,18 @@ var AppComponent = /** @class */ (function () {
         this.wildState = 'normal'; // begining state of animation for 'wildState'
         this.routerAnimation = 'FlyInAnimations';
         this.counter = 0;
+        this.show = false;
     }
+    Object.defineProperty(AppComponent.prototype, "stateName", {
+        get: function () {
+            return this.show ? 'show' : 'hide';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AppComponent.prototype.toggle = function () {
+        this.show = !this.show;
+    };
     AppComponent.prototype.ngAfterViewInit = function () {
         // console.log(this.inputvalue.nativeElement.value);
     };
@@ -458,11 +480,11 @@ var AppComponent = /** @class */ (function () {
                 Object(_animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["wildStateAnimation"])(),
                 Object(_animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["list1Animation"])(),
                 Object(_animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["list2Animation"])(),
-                _animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["flyInOut"],
                 _animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["fader"],
                 _animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["slider"],
                 _animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["transformer"],
-                _animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["stepper"]
+                _animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["stepper"],
+                _animation_app_animation__WEBPACK_IMPORTED_MODULE_1__["popOverAnimation"]
             ],
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         })
