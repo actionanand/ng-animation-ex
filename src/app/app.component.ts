@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation,flyInOut, fader, slider, transformer, stepper } from './animation/app.animation';
+import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation,flyInOut, fader, slider, 
+  transformer, stepper, popOverAnimation } from './animation/app.animation';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation,f
     fader,
     slider,
     transformer,
-    stepper
+    stepper,
+    popOverAnimation
   ]
 })
 
@@ -34,6 +36,16 @@ export class AppComponent implements AfterViewInit{
   wildState = 'normal'; // begining state of animation for 'wildState'
   routerAnimation = 'FlyInAnimations';
   counter = 0;
+
+  show = false;
+
+  get stateName() {
+    return this.show ? 'show' : 'hide';
+  }
+
+  toggle() {
+    this.show = !this.show;
+  }
 
   ngAfterViewInit(): void {
     // console.log(this.inputvalue.nativeElement.value);

@@ -28,7 +28,13 @@
       <div class="animation-buttons">
         <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
         <button class="btn btn-warning" (click)="onShrink()">Shrink!</button>
+        <button (click)="toggle()" class="btn btn-outline-info">Show Hint</button>
         <button class="btn btn-primary" (click)="onRouterAnimationChange()">{{ routerAnimation }}</button>
+      </div>
+      <hr>
+      <div [@popOverAni]="stateName">
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/PNG_transparency_demonstration_2.png" alt="ludo-dice" width="100px"></p>
+        <p>Hello! click {{ routerAnimation }} to see animation.</p>
       </div>
       <hr>
       <div [@divState]="state" class="my-square"

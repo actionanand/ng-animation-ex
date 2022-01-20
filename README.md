@@ -26,6 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 - [Angular animations - Coursera's video](https://www.coursera.org/lecture/angular/exercise-video-angular-animations-part-1-C7YwL)
 - [Angular 8 - Router Animation Tutorial & Example](https://jasonwatmore.com/post/2019/11/04/angular-8-router-animation-tutorial-example)
 - [Beautiful Router Animations with Angular - Fireship](https://fireship.io/lessons/angular-router-animations/)
+- [Beautiful Router Animations with Angular - Fireship(YouTube)](https://www.youtube.com/watch?v=7JA90VI9fAI)
 
 ## Further help
 

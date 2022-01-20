@@ -262,5 +262,16 @@ export const slider =
         ], { optional: true })
       ]),
     ])
+]);
 
+export const popOverAnimation =
+trigger('popOverAni', [
+  state('show', style({
+    opacity: 1
+  })),
+  state('hide', style({
+    opacity: 0
+  })),
+  transition('show => hide', animate('600ms ease-out')),
+  transition('hide => show', animate('1000ms ease-in'))
 ]);

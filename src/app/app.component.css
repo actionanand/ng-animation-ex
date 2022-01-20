@@ -1,7 +1,7 @@
 .animation-buttons {
   display: flex;
   justify-content: space-between;
-  width: 320px;
+  width: 360px;
 }
 
 .my-square {
