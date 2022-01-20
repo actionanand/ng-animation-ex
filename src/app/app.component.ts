@@ -1,18 +1,27 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation, commonFader } from './animation/app.animation';
+import { divStateAnimation, wildStateAnimation, list1Animation, list2Animation,flyInOut, fader, slider, transformer, stepper } from './animation/app.animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  // attach the 'flyInOut' animation to the host (root) element of this component
+  // host: {
+  //   '[@flyInOut]': 'true',
+  //   'style': 'display: block;'
+  // },
   animations: [
     divStateAnimation,
     wildStateAnimation(),
     list1Animation(),
     list2Animation(),
-    commonFader
+    flyInOut,
+    fader,
+    slider,
+    transformer,
+    stepper
   ]
 })
 
@@ -23,6 +32,8 @@ export class AppComponent implements AfterViewInit{
   list = ['Milk', 'Sugar', 'Bread'];
   state = 'normal'; // begining state of animation for 'divState'
   wildState = 'normal'; // begining state of animation for 'wildState'
+  routerAnimation = 'FlyInAnimations';
+  counter = 0;
 
   ngAfterViewInit(): void {
     // console.log(this.inputvalue.nativeElement.value);
@@ -57,5 +68,30 @@ export class AppComponent implements AfterViewInit{
 
     prepareRoute(outlet: RouterOutlet) {
       return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+    }
+
+    onRouterAnimationChange() {
+      this.counter++;
+      if(this.counter > 3) {
+        this.counter = 0;
+      }
+
+      switch(this.counter) {
+        case 0: 
+          this.routerAnimation = 'FlyInAnimations';
+          break;
+        case 1: 
+          this.routerAnimation = 'SliderAnimations';
+          break;
+        case 2: 
+          this.routerAnimation = 'TransformAnimations';
+          break;
+        case 3: 
+          this.routerAnimation = 'StepperAnimations';
+          break;
+        default:
+          this.routerAnimation = 'FlyInAnimations';
+          break;
+      }
     }
 }
