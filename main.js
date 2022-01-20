@@ -329,12 +329,12 @@ var arrayRotate = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigg
         transform: 'rotate(0deg)'
     })),
     Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('void <=> next', [
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0, transform: 'rotate(360deg) scale(1)' }),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('1s ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'rotate(0deg)', opacity: 1 })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0, transform: 'rotate(360deg) scale(1.2)' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('1.2s ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'rotate(0deg) scale(1)', opacity: 1 })),
     ]),
     Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('void <=> prev', [
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0, transform: 'rotate(-360deg) scale(1)' }),
-        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('1s ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'rotate(0deg)', opacity: 1 })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0, transform: 'rotate(-360deg) scale(1.2)' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('1.2s ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'rotate(0deg) scale(1)', opacity: 1 })),
     ])
 ]);
 
