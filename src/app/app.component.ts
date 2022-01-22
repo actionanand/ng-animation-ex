@@ -39,6 +39,7 @@ export class AppComponent implements AfterViewInit{
   state = 'normal'; // begining state of animation for 'divState'
   wildState = 'normal'; // begining state of animation for 'wildState'
   routerAnimation = 'FlyInAnimations';
+  imgUrl = 'https://api.lorem.space/image/burger?w=150&h=150';
   counter = 0;
   numList: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   listToShow = [];
