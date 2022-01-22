@@ -31,6 +31,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 - [In-Depth guide into animations in Angular](https://indepth.dev/posts/1285/in-depth-guide-into-animations-in-angular)
 - [Angular Animations Explained with Examples - Free Code camp](https://www.freecodecamp.org/news/angular-animations-explained-with-examples/)
 - [How to use animation with Angular 6 - Free Code camp](https://www.freecodecamp.org/news/how-to-use-animation-with-angular-6-675b19bc3496/)
+- [Images with Lorem.space - placeholder image generator](https://lorem.space/api)
 
 ## Further help
 
